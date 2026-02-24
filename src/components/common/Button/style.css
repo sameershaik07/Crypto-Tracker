@@ -1,0 +1,43 @@
+.btn{
+    padding: .6rem 1.3rem;
+    background-color: var(--violet);
+    color: var(--white);
+    border-radius: 3rem;
+    font-weight: 600;
+    min-width: 100px;
+    text-transform: capitalize;
+    border: 2px solid var(--violet);
+    text-align: center;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.btn:hover{
+    box-shadow: 5px 5px 10px rgba(58, 128, 233, 0.5);
+}
+
+
+.outline-btn{
+    padding: .6rem 1.3rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 3rem;
+    border: solid var(--violet) 2px;
+    font-weight: 600; 
+    min-width: 100px;
+    text-transform: capitalize;
+    text-align: center;
+    transition: background-color .3s ease-in-out;
+}
+
+.outline-btn:hover{
+    background-color: var(--violet);
+}
+
+@media screen and (max-width: 400px) {
+    .btn,.outline-btn{
+
+        padding: .3rem .8rem;
+        font-weight: 400;
+        font-size: 10px;
+    }
+}

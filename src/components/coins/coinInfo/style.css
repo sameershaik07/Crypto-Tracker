@@ -1,0 +1,29 @@
+.coin-bio{
+    color: var(--white);
+    background-color: var(--dark-grey);
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+p{
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 768px){
+    h2{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    p{
+        font-size: .7rem;
+        font-weight: lighter;
+    }
+
+
+}

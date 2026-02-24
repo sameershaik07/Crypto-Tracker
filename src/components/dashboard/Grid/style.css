@@ -1,0 +1,132 @@
+.grid{
+
+    padding: 1rem;
+    width: 300px;
+    
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+   
+}
+
+.grid:hover{
+    border:1px solid var(--green);
+    transition: all 1s ease-in-out;
+}
+
+.grid-red:hover{
+    border: 1px solid var(--red);
+}
+
+.info-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.coin-logo{
+    width: 3.5rem;
+    height: 3.5rem;
+    
+}
+
+.coin-sym{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 0;
+}
+
+.coin-name{
+    font-size: 1rem;
+    font-weight: light;
+    text-transform: capitalize;
+    color: var(--grey);
+    margin: 0;
+}
+
+.coin-info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.chip-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+    gap: 1rem;
+    margin: 2rem 1rem;
+}
+
+.price-change{
+    border: 2px solid var(--green);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--green);
+    padding: .35rem .75rem;
+    border-radius: 20px;
+    min-width: 60px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.red-chip{
+    border: 2px solid var(--red);
+    color: var(--red);
+}
+
+.price-change:hover{
+    background-color: var(--green);
+    color: var(--white);
+
+}
+
+.red-chip:hover{
+    background-color: var(--red);
+    color: var(--white);
+
+}
+
+.icon-chip{
+    color: var(--green);
+    border: 2px solid var(--green);
+    padding: .25rem .25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icon-chip:hover{
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.red{
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.red:hover{
+    background-color: var(--red) !important;
+    color: var(--white);
+}
+
+.info-container{
+    margin: 1rem;
+}
+
+.coin-mark{
+    color: var(--grey);
+    margin-top: .5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}

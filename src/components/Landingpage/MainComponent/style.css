@@ -1,0 +1,189 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    margin-top: 2rem;
+}
+
+
+
+.left-component {
+    padding: .5rem 3rem;
+    margin: 1rem;
+}
+
+.track-crypto-heading,
+.real-time-heading {
+
+    margin: 0;
+    font-size: 6.5rem;
+    color: var(--white);
+}
+
+
+.track-crypto-heading:hover {
+    color: var(--black);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--white);
+    transition: all .4s ease-in-out;
+}
+
+.real-time-heading {
+    color: var(--violet);
+
+}
+
+.para {
+    color: var(--white);
+    opacity: .5;
+}
+
+.btn-flex {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+
+}
+
+.right-component {
+    /* position: relative; */
+    width: 40%;
+    /* height: 100vh; */
+    min-width: 0;
+    height: 100%;
+    
+
+    /* right: 10px; */
+    padding: 1rem 1.5rem;
+    color: white;
+}
+
+.phone-container {
+    position: relative;
+    margin: auto;
+    max-width: 90vw;
+    height: 90vh;
+
+
+}
+
+.phone {
+    position: absolute;
+
+    width: 350px;
+    max-width: 90vw;
+    z-index: 1;
+    height: auto;
+}
+
+
+.gradient {
+    position: absolute;
+
+    width: 300px;
+    top: 5rem;
+    max-width: 90vw;
+    left: 3.5rem;
+    height: auto;
+
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .track-crypto-heading,
+    .real-time-heading {
+
+
+        font-size: 5rem;
+        -webkit-text-stroke-width: 2px;
+    }
+
+    .phone {
+
+        width: 300px;
+    }
+
+    .gradient {
+        width: 250px;
+    }
+
+}
+
+
+@media screen and (max-width:1000px) {
+
+
+    .track-crypto-heading,
+    .real-time-heading {
+
+
+        font-size: 3rem;
+
+    }
+
+
+    .phone {
+
+        width: 250px;
+    }
+
+    .gradient {
+        width: 180px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-component {
+        text-align: center;
+    }
+
+    .btn-flex {
+        justify-content: center;
+    }
+
+
+    .right-component {
+        width: 50%;
+
+    }
+
+    .track-crypto-heading:hover {
+        color: var(--black);
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--white);
+        transition: all .4s ease-in-out;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .phone {
+
+        width: 150px;
+    }
+
+    .gradient {
+        width: 100px;
+    }
+
+    .track-crypto-heading,
+    .real-time-heading {
+
+
+        font-size: 2rem;
+
+    }
+    
+}

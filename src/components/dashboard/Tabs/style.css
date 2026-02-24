@@ -1,0 +1,41 @@
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+
+.grid-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* margin: 1rem; */
+    /* border: 1px solid white; */
+    padding: 1rem;
+
+}
+
+.list-flex {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:880px) {
+    .list-flex {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .list-flex {
+        width: 100%;
+    }
+
+    .css-13xfq8m-MuiTabPanel-root {
+        padding: 9px !important;
+    }
+}

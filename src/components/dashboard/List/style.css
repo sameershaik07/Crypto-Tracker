@@ -1,0 +1,229 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+    /* border: 1px solid var(--white); */
+    padding: 0rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 98%;
+}
+
+.list:hover {
+    background-color: var(--dark-grey);
+    transition: all .3s;
+}
+
+.list td {
+    text-align: left;
+    width: 18%;
+}
+
+
+.td-img {
+    width: 3rem !important;
+    margin-right: 3rem !important;
+}
+
+.td-right {
+    text-align: right !important;
+}
+
+.td-center {
+    text-align: center !important;
+}
+
+.td-mbl {
+    display: none !important;
+}
+
+.td-arrow {
+    display: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .td-dkt {
+        display: none !important;
+    }
+
+    .td-mbl {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .td-coin-price {
+        font-size: .9rem !important;
+        font-weight: 600 !important;
+    }
+
+    .td-price {
+        /* border: 1px solid var(--green); */
+        font-size: .9rem !important;
+        border-width: 1px !important;  
+        padding: .25rem .65rem !important;
+        border-radius: 20px !important;
+        min-width: 50px !important;
+    }
+
+    .td-icon {
+
+        font-size: 10px !important;
+        padding: .15rem .15rem !important;
+
+    }
+
+    .td-show {
+        display: none !important;
+    }
+
+    .td-arrow {
+        display: block !important;
+    }
+
+    .td-mbl {
+        font-size: .9rem !important;
+        font-weight: 400 !important;
+    }
+
+    .td-sym {
+        font-size: .9rem !important;
+
+    }
+
+    .td-name {
+        font-size: .7rem !important;
+
+    }
+
+    .td-logo {
+        width: 2.5rem !important;
+        height: 2.5rem !important
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .list {
+        padding: 0 .5rem !important;
+    }
+
+    .td-icon {
+        display: none !important;
+    }
+
+    .td-coin-price {
+        font-size: .5rem !important;
+        font-weight: 600 !important;
+    }
+
+    .td-mbl {
+        font-size: .5rem !important;
+        font-weight: 400 I !important;
+    }
+
+    .td-sym {
+        font-size: .5rem !important;
+
+    }
+
+    .td-name {
+        font-size: .3rem !important;
+
+    }
+
+    .td-logo {
+        width: 1rem !important;
+        height: 1rem !important
+    }
+
+    .td-flex {
+        margin: 0;
+    }
+
+    .td-price {
+        /* border: 1px solid var(--green); */
+        font-size: 50% !important;
+        border-width: 1px !important;
+        padding: .25rem !important;
+        font-weight: 400 !important;
+        /* border-radius: 20px; */
+        min-width: 0px !important;
+    }
+
+    .list td {
+        width: 16% !important;
+    }
+
+    .td-img {
+        margin-right: 0 !important;
+    }
+
+}
+
+
+
+/* .list-coin-info {
+    display: flex;
+    flex-direction: column;
+    
+    gap: .3rem;
+}
+
+
+.logo-div {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-coin-logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 2rem;
+}
+
+.list-coin-sym {
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.list-coin-name {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.list-chip-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+}
+
+.list-price-change {
+    border: 2px solid var(--green);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--green);
+    padding: .35rem .95rem;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.list-coin-mark{
+    display: flex;
+    
+    align-items: center;
+    font-size: 19px;
+    font-weight: 400;
+    gap: 1rem;
+} */
