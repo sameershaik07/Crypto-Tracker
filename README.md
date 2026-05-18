@@ -1,70 +1,206 @@
-# Getting Started with Create React App
+# 🚀 Crypto Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern **Cryptocurrency Tracking Platform** built with **React.js** that provides real-time crypto market insights, interactive charts, coin comparison, watchlist management, and responsive dashboards powered by live market APIs.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+🔗 https://cryptotracker1-ng3darllo-shaik-sameer-s-projects1.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+- 📈 Real-time cryptocurrency price tracking
+- 🔍 Dynamic coin search functionality
+- 📊 Interactive charts with historical market data
+- ⚖️ Compare multiple cryptocurrencies
+- ⭐ Watchlist management using LocalStorage
+- 📱 Fully responsive UI for all devices
+- 🎨 Smooth animations using Framer Motion
+- 🌐 API-driven architecture
+- ⚡ Optimized API handling with caching & debouncing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Material UI
+- Framer Motion
+- Chart.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- Node.js
+- Express.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### APIs
+- CoinGecko API
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+crypto-tracker/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── functions/
+│   ├── assets/
+│   └── utils/
+│
+├── server/
+│   ├── cache/
+│   └── index.js
+│
+├── package.json
+└── README.md
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Installation & Setup
 
-## Learn More
+### 1️⃣ Clone Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/sameershaik07/Crypto-Tracker.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2️⃣ Navigate to Project
 
-### Code Splitting
+```bash
+cd Crypto-Tracker
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3️⃣ Install Frontend Dependencies
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4️⃣ Install Backend Dependencies
 
-### Making a Progressive Web App
+```bash
+cd server
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ▶️ Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Start Backend Server
 
-### Deployment
+```bash
+cd server
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Start Frontend
 
-### `npm run build` fails to minify
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Frontend runs on:
+
+```bash
+http://localhost:3000
+```
+
+Backend runs on:
+
+```bash
+http://localhost:5000
+```
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the frontend root:
+
+```env
+REACT_APP_API_URL=YOUR_BACKEND_URL
+```
+
+Example:
+
+```env
+REACT_APP_API_URL=https://your-backend.onrender.com
+```
+
+---
+
+## 📸 Features Overview
+
+### 📊 Dashboard
+- Real-time cryptocurrency market tracking
+- Trending coins and live price updates
+
+### 📈 Coin Details
+- Interactive historical charts
+- Market statistics and detailed analytics
+
+### ⚖️ Compare Page
+- Compare multiple cryptocurrencies
+- Dual-axis chart visualization
+
+### ⭐ Watchlist
+- Save favorite cryptocurrencies locally
+- Persistent watchlist using LocalStorage
+
+---
+
+## 🚀 Deployment
+
+### Frontend
+- Deployed on Vercel
+
+### Backend
+- Deployed on Render
+
+---
+
+## ⚡ Performance Optimizations
+
+- Reduced CoinGecko API rate-limit issues
+- Implemented backend caching
+- Optimized API calls using `useEffect`
+- Added debouncing for chart updates
+- Reusable and scalable component architecture
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to branch
+5. Open a Pull Request
+
+---
+
+## 👨‍💻 Author
+
+### Shaik Sameer Hussain
+
+- GitHub: https://github.com/sameershaik07
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, give it a ⭐ on GitHub.
