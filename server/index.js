@@ -4,11 +4,15 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const NodeCache = require("node-cache");
-
+const PORT = process.env.PORT || 5000;
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: "*",
+    }
+));
 
-const BASE_URL = "https://api.coingecko.com/api/v3";
+const BASE_URL = process.env.COINGECKO_API;
 
 // Cache for 60 seconds
 const cache = new NodeCache({ stdTTL: 300 });
@@ -64,6 +68,6 @@ app.use("/api/coingecko", async (req, res) => {
     }
 });
 
-app.listen(5000, () => {
-    console.log("✅ Backend running on port 5000");
+app.listen(PORT, () => {
+    console.log(`✅ Backend running on port ${PORT}`);
 });
