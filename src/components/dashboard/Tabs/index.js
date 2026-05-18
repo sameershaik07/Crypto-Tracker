@@ -46,7 +46,7 @@ export default function TabsComponent({ coins }) {
 
                 <TabPanel value="grid">
                     <div className='grid-flex'>
-                        {coins.map((coin, i) => {
+                        {Array.isArray(coins) && coins.map((coin, i) => {
                             return (
 
                                 <Link to={`/coin/${coin.id}`}>
@@ -60,7 +60,7 @@ export default function TabsComponent({ coins }) {
                 <TabPanel value="list">
                     <table className='list-flex'>
 
-                        {coins.map((coin, i) => {
+                        {Array.isArray(coins) && coins.map((coin, i) => {
                             return (
                                 <Link to={`/coin/${coin.id}`}>
 

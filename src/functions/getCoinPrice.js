@@ -37,12 +37,13 @@
 // };
 
 import axios from "axios";
+import { API_URL } from "../utils/api";
 
 export const getCoinPrice = async (id, days, priceType) => {
   try {
     
     const response = await axios.get(
-      `http://localhost:5000/api/coingecko/coins/${id}/market_chart`,
+      `${API_URL}/api/coingecko/coins/${id}/market_chart`,
       {
         params: {
           vs_currency: "usd",

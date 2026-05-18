@@ -8,9 +8,12 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import { isInWatchlist } from '../../../functions/isInWatchlist';
 import { toggleWatchlist } from '../../../functions/toggleWatchlist';
 function Grid({ coin }) {
+    
     const [watchlist, setWatchlist] = useState(
         isInWatchlist(coin.id)
     );
+    if (!coin) return null;
+
 
     const toggle = (e) => {
         e.preventDefault();
@@ -19,6 +22,7 @@ function Grid({ coin }) {
         setWatchlist(updatedList.includes(coin.id));
     }
     return (
+        
         <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}

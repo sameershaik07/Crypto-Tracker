@@ -42,7 +42,7 @@ app.use("/api/coingecko", async (req, res) => {
 
     } catch (error) {
         console.log(error.response?.status);
-        // console.log("⚠ CoinGecko blocked or failed");
+        console.log("⚠ CoinGecko blocked or failed");
 
         // ✅ fallback to stale cache
         const stale = cache.get(cacheKey);

@@ -1,37 +1,34 @@
-// import axios from "axios"
-
-// export const get100Coins = () => {
-//     const myCoins = axios
-//         .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&names=Bitcoin&symbols=btc&category=layer-1&price_change_percentage=1h&per_page=100")
-//         .then((res) => {
-            
-//             return res.data
-//         })
-//         .catch((err) => {
-//             console.log("Error ", err)
-           
-//         })
-//     return myCoins
-// }
-
 import axios from "axios";
+import { API_URL } from "../utils/api";
 
 export const get100Coins = async () => {
+
   try {
+
     const response = await axios.get(
-      "http://localhost:5000/api/coingecko/coins/markets",
+      `${API_URL}/api/coingecko/coins/markets`,
       {
         params: {
           vs_currency: "usd",
+          order: "market_cap_desc",
           per_page: 100,
           page: 1,
+          sparkline: false,
         },
       }
     );
 
+    if (!Array.isArray(response.data)) {
+      console.log("Invalid coins response");
+      return [];
+    }
+
     return response.data;
+
   } catch (error) {
-    console.log(error);
-    return [];
+
+    console.log("Coins fetch failed:", error);
+
+    return []; // NEVER return null
   }
 };
