@@ -41,7 +41,7 @@ function Grid({ coin }) {
                     <div className='grid-dynamic'>
 
                         <div className='chip-flex'>
-                            <p className='price-change'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                            <p className='price-change'>{coin?.price_change_percentage_24h?.toFixed(2)}%</p>
                             <div className='icon-chip'>
                                 <TrendingUpRoundedIcon />
                             </div>

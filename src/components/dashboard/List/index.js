@@ -52,7 +52,7 @@ function Lists({ coin, className = "" }) {
                     <Tooltip title="Price Change" placement='bottom-start'>
 
                         <td className='chip-flex td-flex'>
-                            <p className='price-change td-price'>+{coin.price_change_percentage_24h.toFixed(2)}%</p>
+                            <p className='price-change td-price'>+{coin?.price_change_percentage_24h?.toFixed(2)}%</p>
                             <div className='icon-chip td-icon td-show'>
                                 <TrendingUpRoundedIcon />
 
