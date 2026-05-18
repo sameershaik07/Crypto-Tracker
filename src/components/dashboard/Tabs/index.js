@@ -50,7 +50,7 @@ export default function TabsComponent({ coins }) {
                             return (
 
                                 <Link to={`/coin/${coin.id}`}>
-                                    <Grid coin={coin} key={i + 1} />
+                                    {coin && <Grid coin={coin} key={i + 1} />}
                                 </Link>
 
                             );
@@ -64,7 +64,7 @@ export default function TabsComponent({ coins }) {
                             return (
                                 <Link to={`/coin/${coin.id}`}>
 
-                                    <Lists key={i} coin={coin} />
+                                    {coin && <Lists key={i} coin={coin} />}
                                 </Link>
                             );
                         })}

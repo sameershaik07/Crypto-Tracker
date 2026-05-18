@@ -1,14 +1,29 @@
-import React from 'react'
+import { useState } from 'react'
 import "./style.css"
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import { Tooltip } from '@mui/material';
 import { convertNum } from '../../../functions/converNum';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
+import StarRoundedIcon from '@mui/icons-material/StarRounded';
+import { isInWatchlist } from '../../../functions/isInWatchlist';
+import { toggleWatchlist } from '../../../functions/toggleWatchlist';
 
-function Lists({ coin }) {
+function Lists({ coin, className = "" }) {
+    const [watchlist, setWatchlist] = useState(
+        isInWatchlist(coin.id)
+    );
+
+    const toggle = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleWatchlist(coin.id);
+        setWatchlist(isInWatchlist(coin.id));
+    }
+
     return (
-        <motion.tr className='list'
+        <motion.tr className={`list ${className}`}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: .3 }}
@@ -47,6 +62,7 @@ function Lists({ coin }) {
 
                             </div>
 
+
                         </td>
                     </Tooltip>
 
@@ -63,7 +79,8 @@ function Lists({ coin }) {
                             <div className='icon-chip td-icon red td-arrow'>
                                 <TrendingDownRoundedIcon fontSize='small' />
                             </div>
-                            
+
+
                         </td>
                     </Tooltip>
                 )
@@ -97,6 +114,42 @@ function Lists({ coin }) {
                 </td>
 
             </Tooltip>
+
+            {coin.price_change_percentage_24h >= 0 ?
+                (
+                    <Tooltip title="Watchlist" placement='bottom'>
+
+                        <td className='watch-td'>
+                            {(!watchlist) ?
+                                <div className='list-watch ' onClick={toggle}>
+                                    <StarOutlineRoundedIcon fontSize='large' />
+                                </div> :
+                                <div className='list-watch' onClick={toggle}>
+                                    <StarRoundedIcon fontSize='large' />
+                                </div>
+                            }
+                        </td>
+                    </Tooltip>
+                ) :
+                (
+
+                    <Tooltip title="Watchlist" placement='bottom'>
+
+                        <td className='watch-td'>
+                            {(!watchlist) ?
+                                <div className='list-watch red-watch ' onClick={toggle}>
+                                    <StarOutlineRoundedIcon fontSize='large' />
+                                </div> :
+                                <div className='list-watch red-watch' onClick={toggle}>
+                                    <StarRoundedIcon fontSize='large' />
+                                </div>
+                            }
+                        </td>
+                    </Tooltip>
+
+                )
+            }
+
 
         </motion.tr>
     )

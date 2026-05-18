@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Header from '../components/common/Header'
 import Footer from '../components/common/Footer'
 import TabsComponent from '../components/dashboard/Tabs'
 import Loader from '../components/common/Loader'
-import axios from "axios"
 import Search from '../components/dashboard/Search'
 import PaginationComponent from '../components/dashboard/Pagination'
 import ScrollTop from '../components/common/ScrollTop'
@@ -12,58 +11,93 @@ import { get100Coins } from '../functions/get100Coins'
 function DashboardPage() {
 
     const [coins, setCoins] = useState([]);
-    const [paginatedCoins, setPaginatedCoins] = useState([]);
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
     const [loader, setLoader] = useState(true);
 
-    const handleChange = (event, value) => {
-        setPage(value);
-        let index = (value - 1) * 10;
-        setPaginatedCoins(coins.slice(index, index + 10));
+    /* ===============================
+       FETCH DATA ONLY ONCE
+    =============================== */
+    useEffect(() => {
+        fetchCoins();
+    }, []);
+
+    const fetchCoins = async () => {
+        const data = await get100Coins();
+
+        if (data?.length) {
+            setCoins(data);
+        }
+
+        setLoader(false);
     };
 
+    /* ===============================
+       SEARCH HANDLER
+    =============================== */
     const onSearchClick = (e) => {
-        console.log(e.target.value)
-        setSearch(e.target.value)
-    }
+        setSearch(e.target.value);
+        setPage(1); // reset pagination on search
+    };
 
-    let filterCoins = coins.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
-        || item.symbol.toLowerCase().includes(search.toLowerCase()));
+    /* ===============================
+       FILTERED COINS (MEMOIZED)
+    =============================== */
+    const filteredCoins = useMemo(() => {
+        return coins.filter((item) =>
+            item.name.toLowerCase().includes(search.toLowerCase()) ||
+            item.symbol.toLowerCase().includes(search.toLowerCase())
+        );
+    }, [coins, search]);
 
-    useEffect(() => {
-        getData();
-    }, [])
+    /* ===============================
+       PAGINATION (MEMOIZED)
+    =============================== */
+    const paginatedCoins = useMemo(() => {
+        const start = (page - 1) * 10;
+        return filteredCoins.slice(start, start + 10);
+    }, [filteredCoins, page]);
 
-    const getData = async () => {
-        const data = await get100Coins();
-        if (data) {
-            setCoins(data)
-            setPaginatedCoins(data.slice(0, 10))
-            setLoader(false)
-        }
-    }
+    /* ===============================
+       PAGE CHANGE
+    =============================== */
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
 
-    
-
-
+    /* ===============================
+       UI
+    =============================== */
     return (
         <>
             <Header />
             <ScrollTop />
-            {loader ? <Loader /> :
-                (
-                    <div style={{ color: 'white' }}>
 
-                        <Search search={search} onSearchClick={onSearchClick} />
-                        <TabsComponent coins={search ? filterCoins : paginatedCoins} />
-                        {!search && <PaginationComponent page={page} handlePage={handleChange} />}
-                    </div>)
-            }
+            {loader ? (
+                <Loader />
+            ) : (
+                <div style={{ color: 'white' }}>
+
+                    <Search
+                        search={search}
+                        onSearchClick={onSearchClick}
+                    />
+
+                    <TabsComponent coins={paginatedCoins} />
+
+                    {!search && (
+                        <PaginationComponent
+                            page={page}
+                            handlePage={handleChange}
+                        />
+                    )}
+
+                </div>
+            )}
+
             <Footer />
         </>
-    )
+    );
 }
 
-export default DashboardPage
+export default DashboardPage;

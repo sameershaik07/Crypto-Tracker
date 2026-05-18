@@ -11,7 +11,7 @@ function Header() {
         <Link to='/' ><p className='link'> Home</p></Link>
         <Link to='/compare' ><p className='link'> Compare</p></Link>
         <Link to='/watchlist' ><p className='link'> Watchlist</p></Link>
-        <Link to='/dashboard' ><Button text="Dashboard" onClick={() => console.log("Btn click")} /></Link>
+        <Link to='/dashboard' ><Button text="Dashboard"  /></Link>
       </div>
 
       <div className='mobile-drawer'>

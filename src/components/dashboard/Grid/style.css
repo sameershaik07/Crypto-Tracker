@@ -54,6 +54,25 @@
     gap: .5rem;
 }
 
+.grid-dynamic{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-watch{
+    position: relative;
+    right: 2rem;
+    /* background-color: var(--green); */
+    color: var(--green);
+}
+.red-watch{
+    color: var(--red);
+    /* background-color: var(--red); */
+}
+
+
+
 .chip-flex{
     display: flex;
     justify-content: flex-start;

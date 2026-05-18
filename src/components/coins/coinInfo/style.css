@@ -4,6 +4,7 @@
     padding: 1rem;
     border-radius: 20px;
     display: flex;
+    /* margin-bottom: .25rem; */
     flex-direction: column;
     justify-content: center;
     gap: 1rem;

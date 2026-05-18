@@ -10,6 +10,11 @@
     width: 98%;
 }
 
+.lst{
+    color: var(--white);
+    background-color: var(--dark-grey);
+}
+
 .list:hover {
     background-color: var(--dark-grey);
     transition: all .3s;
@@ -20,7 +25,14 @@
     width: 18%;
 }
 
+.list-watch{
+    text-align: center;
+    color: var(--green);
+}
 
+.red-watch{
+    color: var(--red);
+}
 .td-img {
     width: 3rem !important;
     margin-right: 3rem !important;
@@ -49,6 +61,10 @@
 
     .td-mbl {
         display: block !important;
+    }
+
+    .watch-td{
+        display: none !important;
     }
 }
 

@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { get100Coins } from '../../../../functions/get100Coins';
 import { MenuItem, Select } from '@mui/material';
 import "./styles.css"
-function SelectCoins({crypto1,crypto2,handleChange,allCoins }) {
+function SelectCoins({ crypto1, crypto2, handleChange, allCoins }) {
 
-    
-    
+
+
 
 
     const styles = {
@@ -25,36 +25,36 @@ function SelectCoins({crypto1,crypto2,handleChange,allCoins }) {
 
     }
 
-    
 
 
-    
+
+
     return (
         <div className='select-flex'>
             <p>Crypto 1 </p>
-            <Select
+            <Select className='sel'
                 value={crypto1}
                 label="Coin"
-                onChange={(e) => handleChange(e,false)}
+                onChange={(e) => handleChange(e, false)}
 
                 sx={styles}
             >
-                {allCoins.map((coin) =>
-                    (<MenuItem key={coin} value={coin.id}>{coin.name}</MenuItem>)
+                {allCoins.filter((item) => item.id != crypto2).map((coin) =>
+                    (<MenuItem key={coin.id} value={coin.id}>{coin.name}</MenuItem>)
                 )}
 
             </Select>
-            
+
             <p>Crypto 2 </p>
-            <Select
+            <Select className='sel'
                 value={crypto2}
                 label="Coin"
-                onChange={(e) => handleChange(e,true)}
+                onChange={(e) => handleChange(e, true)}
 
                 sx={styles}
             >
-                {allCoins.map((coin1) =>
-                    (<MenuItem key={coin1} value={coin1.id}>{coin1.name}</MenuItem>)
+                {allCoins.filter((item) => item.id != crypto1).map((coin1) =>
+                    (<MenuItem key={coin1.id} value={coin1.id}>{coin1.name}</MenuItem>)
                 )}
 
             </Select>

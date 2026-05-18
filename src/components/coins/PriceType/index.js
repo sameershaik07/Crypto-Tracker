@@ -17,15 +17,16 @@ export default function PriceType({priceType, handlepriceType}) {
                 aria-label="text alignment"
 
                 sx={{
-                    "&.Mui-selected": {
-                        color: "var(--violet) !important",
+                    "& .Mui-selected": {
+                        
+                        color: "var(--white) !important",
                     },
                     borderColor: "var(--violet)",
                     border: "unset !important",
                     "& .MuiToggleButtonGroup-grouped": {
                         border: "1px solid var(--violet)!important",
                         borderColor: "unset",
-                        color: "var(--violet) !important ",
+                        color: "var(--violet)  ",
                     },
                     "& .MuiToggleButton-standard": {
                         color: "var(--violet) !important",

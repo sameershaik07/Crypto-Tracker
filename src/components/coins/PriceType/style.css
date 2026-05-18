@@ -5,6 +5,11 @@
     margin: 1rem;
 }
 
+.toggle-btn:target{
+    background-color: var(--violet) !important;
+    color: var(--white) !important;
+}
+
 @media screen and (max-width: 880px) {
     .toggle-btn {
 

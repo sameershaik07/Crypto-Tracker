@@ -1,4 +1,5 @@
 export const setCoinObject=(usestate, data)=>{
+    if(!data)return;
     console.log(data)
     const coinData ={
         id: data.id,
